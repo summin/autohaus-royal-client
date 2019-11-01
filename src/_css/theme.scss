@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 0px;
+    
+}
+
+@media (max-width: 575px) {
+    .img {
+        padding: 0 25% 0 25%;
+    }
+}
+
+.first-caps {
+    text-transform: capitalize;
+}
+
+.navbtngroup {
+    margin-left: auto
+}
+
+.status {
+    color: red;
+}
+
+.word-wrap {
+    word-wrap: break-word;
+}
+
+.cursorHand {
+    cursor: hand;
+}
+
+.cursorDefault {
+    cursor: default;
+}
+
+.fixedBottom {
+    position: fixed;
+    bottom: 0
+}
+
+.smaller {
+    transform: scale(0.5);
+}
+
