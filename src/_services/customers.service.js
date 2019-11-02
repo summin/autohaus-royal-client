@@ -1,28 +1,37 @@
 import config from 'config';
 import { authHeader } from '../_helpers';
 
-export const proposalService = {
+export const customersService = {
     submit,
+    modify,
     get
 };
 
-function submit(proposal) {
+function submit(customers) {
     const requestOptions = {
-        method: 'PUT',
+        method: 'POST',
         headers: { ...authHeader(), 'Content-Type': 'application/json' },
-        body: JSON.stringify(proposal)
+        body: JSON.stringify(customers)
     };
-    return fetch(`${config.apiUrl}/proposals/submit`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}/kunden`, requestOptions).then(handleResponse);
 }
 
+
+
 function get(attr) {
-    
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
     };
+    return fetch(`${config.apiUrl}/kunden/${attr}`, requestOptions).then(handleResponse);
+}
 
-    return fetch(`${config.apiUrl}/proposals/get${attr}`, requestOptions).then(handleResponse);
+function modify(attr) {
+    const requestOptions = {
+        method: 'PUT',
+        headers: authHeader()
+    };
+    return fetch(`${config.apiUrl}/kunden/${attr}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
@@ -34,7 +43,6 @@ function handleResponse(response) {
                 logout();
                 location.reload(true);
             }
-
             const error = (data && data.message) || response.statusText;
             return Promise.reject(error);
         }

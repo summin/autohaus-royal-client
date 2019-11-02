@@ -1,3 +1,3 @@
 export * from './user.service';
-export * from './proposal.service';
+export * from './customers.service';
 export * from './contract.service';

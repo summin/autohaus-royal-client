@@ -22,8 +22,8 @@ const Login = ({ ...props }) => {
         <Container>
             <div className="d-flex flex-column mb-5">
                 <ButtonGroup size="lg" aria-label="" block>
-                    <Button onClick={onClick} value="login" variant="light">Anmelden</Button>
-                    <Button onClick={onClick} value="register" variant="light">Registrieren</Button>
+                    <Button onClick={onClick} value="login" variant="info">Anmelden</Button>
+                    <Button onClick={onClick} value="register" variant="info">Registrieren</Button>
                 </ButtonGroup>
             </div>
             <Row>

@@ -79,7 +79,6 @@ const FormMain = ({ ...props }) => {
 
     return (
         <Form className="mb-4 pb-4" noValidate validated={validated} onSubmit={handleSubmit}>
-            
             {getGroups(formFields).map((i) => (
                 <Form.Row key={i}>
                     {Object.keys(formFields).map((j) => (
@@ -97,13 +96,15 @@ const FormMain = ({ ...props }) => {
                                     <Form.Control
                                         type="text"
                                         name={j}
+                                        defaultValue={formData && formData[j]}
                                         aria-describedby="inputGroupPrepend"
                                         required />}
                                 {formFields[j].type == "drop-down" &&
                                     <Form.Control
                                         as="select"
                                         name={j}
-                                        required>
+                                        required
+                                        defaultValue={formData && formData[j]}>
                                         {getOptions(formFields[j].options).map((k) => (
                                             <option key={k}>{k}</option>
                                         ))}

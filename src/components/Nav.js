@@ -8,13 +8,7 @@ import { userActions, getContentFocus, expandNav } from '../_actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faUserCircle,
-    faFileAlt,
-    faEnvelope,
-    faChartArea,
-    faCheck,
-    faShareSquare,
-    faCalendarAlt,
-    faCalendarCheck
+    faIdCard
 
 } from '@fortawesome/free-solid-svg-icons'
 
@@ -36,37 +30,22 @@ class Header extends Component {
                 className="header fixed-top m-0 p-0">
                 <button
                     onClick={this.props.expand}
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    className="navbar-toggler">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <Navbar.Brand>
-                    <h6 className="ml-2 mt-2"> A.Leontjev Angabe </h6>
+                    <h6 className="ml-2 mt-2"> A.Leontjev </h6>
                 </Navbar.Brand>
                     <Navbar.Collapse className={this.props.collapse && "show"} id="basic-navbar-nav">
                         <div className="navbtngroup">
                             <Button
-                                key="submit"
+                                key="kunden"
                                 className="ml-1 mr-1 navbtn"
                                 variant="nav-btn"
                                 size="sm"
-                                value="submit"
+                                value="customers"
                                 onClick={this.props.getFocus}>
-                                <div className="d-inline"><FontAwesomeIcon icon={faShareSquare} size="lg" /> Submit </div>
-                            </Button>
-                            <Button
-                                key="proposals"
-                                className="ml-1 mr-1 navbtn"
-                                variant="nav-btn"
-                                size="sm"
-                                value="proposals"
-                                onClick={this.props.getFocus}>
-                                <div className="d-inline"><FontAwesomeIcon icon={faCheck} size="lg" /> Proposals </div>
+                                <div className="d-inline"><FontAwesomeIcon icon={faIdCard} size="lg" /> Kunden </div>
                             </Button>
                         </div>
                     </Navbar.Collapse>
@@ -75,12 +54,8 @@ class Header extends Component {
                             <div className="d-inline-flex align-items-center">
                                 <div className="mr-2">{this.props.user.firstName + " " + this.props.user.lastName.charAt(0) + "."}</div>
                                 <FontAwesomeIcon icon={faUserCircle} size="1x" />
-                            </div>
-                        }
+                            </div>}
                         id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#">User Stats</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item value="config" onClick={this.props.getFocus}>App Config</NavDropdown.Item>
                         <NavDropdown.Item onClick={this.onClickLogout()}>Logout</NavDropdown.Item>
                     </NavDropdown>
             </Navbar>

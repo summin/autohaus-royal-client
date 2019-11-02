@@ -1,0 +1,62 @@
+{
+    "firstName": {
+        "name": "Vorname",
+        "prepend": "",
+        "w": 5,
+        "type": "text",
+        "options": "",
+        "gr": 1,
+        "xgr": 1,
+        "comments": ""
+    },
+    "lastName": {
+        "name": "Nachname",
+        "prepend": "",
+        "w": 5,
+        "type": "text",
+        "options": "",
+        "gr": 1,
+        "xgr": 1,
+        "comments": "Nutzername"
+    },
+    "gender": {
+        "name": "Geschlecht",
+        "prepend": "",
+        "w": 2,
+        "type": "drop-down",
+        "options": "Mann, Frau, Andere",
+        "gr": 1,
+        "xgr": 1,
+        "comments": "Nutzername"
+    },
+    "street": {
+        "name": "Straße",
+        "prepend": "",
+        "w": 6,
+        "type": "text",
+        "options": "",
+        "gr": 2,
+        "xgr": 1,
+        "comments": ""
+    },
+    "postCode": {
+        "name": "Postleitzahl",
+        "prepend": "",
+        "w": 2,
+        "type": "text",
+        "options": "",
+        "gr": 2,
+        "xgr": 1,
+        "comments": "Nutzername"
+    },
+    "city": {
+        "name": "Ort",
+        "prepend": "",
+        "w": 4,
+        "type": "text",
+        "options": "",
+        "gr": 2,
+        "xgr": 1,
+        "comments": "Nutzername"
+    }
+}

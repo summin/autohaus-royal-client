@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { alertActions } from '../_actions'
 import { Login } from './Login'
 import Nav from './Nav'
-import Content from './Content'
+import { Content } from './Content'
 
 
 class App extends React.Component {

@@ -1,13 +1,6 @@
-import { combineReducers } from 'redux'
-import {
-    NAV_EXPAND,
-    CONTENT_REQUEST,
-    CONTENT_FOCUS,
-    CONTENT_PUSH_FORM_VALUE,
-    FORM_CONTENT
-} from '../actions'
+import { contentConstants } from '../_constants';
 
-export const header = (state = {}, action) => {
+export const nav = (state = {}, action) => {
     switch (action.type) {
         default:
             return {
@@ -18,26 +11,26 @@ export const header = (state = {}, action) => {
 
 export const content = (state = {}, action) => {
     switch (action.type) {
-        case NAV_EXPAND:
+        case contentConstants.NAV_EXPAND:
             return {
                 ...state,
                 collapse: !state.collapse
             }
-        case CONTENT_REQUEST:
+        case contentConstants.CONTENT_REQUEST:
             return {
                 ...state,
                 content: action.content,
                 contentLoaded: action.contentLoaded
             }
 
-        case CONTENT_FOCUS:
+        case contentConstants.CONTENT_FOCUS:
             return {
                 ...state,
                 focus: action.focus,
                 collapse: false
             }
 
-        case CONTENT_PUSH_FORM_VALUE:
+        case contentConstants.CONTENT_PUSH_FORM_VALUE:
             return {
                 ...state,
                 content: {
@@ -49,7 +42,7 @@ export const content = (state = {}, action) => {
                 }
             }
 
-        case FORM_CONTENT:
+        case contentConstants.FORM_CONTENT:
             if (action.focus !== state.formFocus) {
                 return {
                     ...state,
@@ -77,10 +70,3 @@ export const footer = (state = {}, action) => {
     }
 }
 
-const reducer = combineReducers({
-    header,
-    content,
-    footer
-})
-
-export default reducer
