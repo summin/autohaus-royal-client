@@ -83,7 +83,7 @@ const FormMain = ({ ...props }) => {
                 <Form.Row key={i}>
                     {Object.keys(formFields).map((j) => (
                         (formFields[j].gr == i) &&
-                        <Form.Group key={j} as={Col} sm={formFields[j].w} controlId={j}>
+                        <Form.Group  className={formFields[j].none && "d-none"} key={j} as={Col} sm={formFields[j].w} controlId={j}>
                             <Form.Label
                                 style={labelStyle}>
                                 <span className="mr-4" style={labelSpanStyle}><small><strong>{formFields[j].name}</strong></small></span></Form.Label>
@@ -98,7 +98,7 @@ const FormMain = ({ ...props }) => {
                                         name={j}
                                         defaultValue={formData && formData[j]}
                                         aria-describedby="inputGroupPrepend"
-                                        required />}
+                                        required={false} />}
                                 {formFields[j].type == "drop-down" &&
                                     <Form.Control
                                         as="select"

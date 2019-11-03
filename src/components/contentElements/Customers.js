@@ -10,6 +10,7 @@ import Button from 'react-bootstrap/Button'
 import FormMain from './FormMain'
 import TableCustomers from './TableCustomers'
 import formCustomersConfig from '../contentConfig/FormCustomers.json'
+import formCustomersEditConfig from '../contentConfig/FormCustomersEdit.json'
 import { customersActions, alertActions } from '../../_actions'
 
 const Customers = ({ ...props }) => {
@@ -49,8 +50,7 @@ const Customers = ({ ...props }) => {
     }
 
     return (
-        <Fragment>
-            <Container>
+     <Container>
                 <Row>
 
                     <Button className="m-2" onClick={onClick} value="newCustomer" size="sm" variant="dark">Hinzufügen</Button>
@@ -86,7 +86,7 @@ const Customers = ({ ...props }) => {
 
                 {tab == "editCustomer" &&
                     <FormMain
-                        formFields={formCustomersConfig}
+                        formFields={formCustomersEditConfig}
                         formData={customers.entries && customers.entries[0]}
                         loading=""
                         buttonName="Bearbeiten"
@@ -99,7 +99,6 @@ const Customers = ({ ...props }) => {
                     <TableCustomers customers={customers} editEntry={editEntry} />
                 }
             </Container>
-        </Fragment>
     );
 }
 

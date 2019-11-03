@@ -27,11 +27,13 @@ function get(attr) {
 }
 
 function modify(attr) {
+    console.log(attr)
     const requestOptions = {
         method: 'PUT',
-        headers: authHeader()
+        headers: { ...authHeader(), 'Content-Type': 'application/json' },
+        body: JSON.stringify(attr)
     };
-    return fetch(`${config.apiUrl}/kunden/${attr}`, requestOptions).then(handleResponse);
+    return fetch(`${config.apiUrl}/kunden/${attr._id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

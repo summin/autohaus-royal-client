@@ -20,15 +20,6 @@ export function customers(state = {}, action) {
                 loading: false,
                 entries: action.res
             };
-        case customersConstants.MODIFY_REQUEST:
-            return {
-                loading: true,
-                entries: ""
-            };
-        case customersConstants.MODIFY_SUCCESS:
-            return {
-                loading: false
-            };
         case customersConstants.SUBMIT_FAILURE || customersConstants.GET_FAILURE:
             return {
                 error: action.error

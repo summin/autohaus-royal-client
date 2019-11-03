@@ -12,7 +12,7 @@ const TableCustomers = ({ ...props }) => {
         <Table responsive>
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>AR Ref</th>
                     <th>Nachname</th>
                     <th className="d-md-table-cell d-none">Vorname</th>
                     <th className="d-md-table-cell d-none">Geschlecht</th>

@@ -68,7 +68,7 @@ function modify(customers) {
                 res => {
                     dispatch(success(res));
                     dispatch(alertActions.clear());
-                    dispatch(alertActions.success(`Received ${res.length} items`));
+                    dispatch(alertActions.success(`Successfully Modified`));
                 },
 
                 error => {
