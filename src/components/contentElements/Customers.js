@@ -64,7 +64,7 @@ const Customers = ({ ...props }) => {
                                 by:
                                         <Form.Control className="h-75 p-0 m-0 bg-secondary" as="select">
                                     <option value="lastName">Nachname</option>
-                                    <option value="ref">ID</option>
+                                    <option value="ref">AR Ref</option>
                                 </Form.Control>
                             </InputGroup.Text>
 

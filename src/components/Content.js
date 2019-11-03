@@ -8,7 +8,7 @@ const Content = ({ ...props }) => {
     const { focus } = props;
     return (
         <Fragment>
-        <Customers />
+            <Customers />
         </Fragment>
     );
 
